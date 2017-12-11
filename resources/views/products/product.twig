@@ -1,0 +1,49 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}product{% endblock %}
+{% block title %}{{ product.name|raw }}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <img src="/assets/img/product-hero.jpg" draggable="false">
+    <div class="page-hero__container container">
+        <h1 class="product">{{ product.name|raw }}</h1>
+    </div>
+</section>
+
+<section class="main">
+    <div class="main__container container">
+        <div class="column-9">
+            <h2>{{ product.name|raw }}</h2>
+
+            {% if product.description is not empty %}
+                <p>{{ product.description|raw }}</p>
+            {% endif %}
+
+            {% if product.manufacturer is not empty %}
+                <h3>Manufacturer</h3>
+                <p>{{ product.manufacturer|raw }}</p>
+            {% endif %}
+
+            {% if product.features is not empty %}
+                <h3>Features</h3>
+                <ul>{{ product.features|raw }}</ul>
+            {% endif %}
+
+            {% if product.specifications is not empty %}
+                <h3>Specifications</h3>
+                <ul>{{ product.specifications|raw }}</ul>
+            {% endif %}
+
+            {% if product.link is not empty %}
+                <a href="/assets/content/{{ product.link }}.pdf" target="_blank" class="button">Download PDF Brochure</a>
+            {% endif %}
+        </div>
+
+        <div class="column-3">
+            <img src="/assets/img/types/{{ type.slug }}/{{ category.slug }}/{{ product.image }}.jpg" alt="{{ product.name|raw }}" draggable="false">
+        </div>
+    </div>
+</section>
+
+{% endblock %}

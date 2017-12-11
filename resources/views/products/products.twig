@@ -1,0 +1,38 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}products-list{% endblock %}
+{% block title %}{{ category.name|raw }}{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <img src="/assets/img/type-rentals-hero.jpg" draggable="false">
+    <div class="page-hero__container container">
+        <h1>{{ category.name|raw }}</h1>
+    </div>
+</section>
+
+<section class="main">
+    <div class="main__container container">
+        <h2>{{ category.name|raw }}</h2>
+
+        <div class="products-list__container container--full">
+            {% if products is empty %}
+                <p class="empty">Products Coming Soon!</p>
+            {% else %}
+
+                {% for product in products %}
+                    <div class="column-4 product">
+                        <a href="{{ path_for('product', { type: typeUrl, category: categoryUrl, product: product.slug }) }}">
+                            <div class="img__container">
+                                <img src="/assets/img/types/{{ type.slug }}/{{ category.slug }}/{{ product.image }}.jpg" alt="{{ product.name|raw }}" draggable="false">
+                            </div>
+                            <p>{{ product.name|raw }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

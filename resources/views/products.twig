@@ -1,0 +1,22 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}products{% endblock %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+
+<section class="main">
+    <div class="main__container container">
+        {% for type in types %}
+            <div class="column-4 category">
+                <a href="{{ path_for('categories', { type: type.slug }) }}">
+                    <div class="img__container">
+                        <img src="assets/img/types/{{ type.image }}.jpg" alt="{{ type.name }}" draggable="false">
+                    </div>
+                    <p>{{ type.name }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

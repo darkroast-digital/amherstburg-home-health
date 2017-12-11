@@ -1,0 +1,15 @@
+<nav class="nav">
+    <div class="nav__container container">
+        <div class="menu">
+            <ul class="nav__navbar is--active">
+                <li class="{% if current_path == path_for('home') %}is--active{% endif %}"><a href="{{ path_for('home') }}">Home</a></li>
+                <li class="{% if current_path == path_for('products') %}is--active{% endif %}"><a href="{{ path_for('products') }}">Products</a></li>
+                <li class="{% if current_path == path_for('rentals') %}is--active{% endif %}"><a href="{{ path_for('rentals') }}">Rentals</a></li>
+                <li class="{% if current_path == path_for('service') %}is--active{% endif %}"><a href="{{ path_for('service') }}">Service</a></li>
+                <li class="{% if current_path == path_for('videos') %}is--active{% endif %}"><a href="{{ path_for('videos') }}">Videos</a></li>
+                <li class="{% if current_path == path_for('contact') %}is--active{% endif %}"><a href="{{ path_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+         {% include 'partials/hamburger.twig' %}
+    </div>
+</nav>

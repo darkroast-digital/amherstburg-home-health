@@ -1,0 +1,81 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}contact{% endblock %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <img src="/assets/img/contact-hero.jpg" draggable="false">
+    <div class="page-hero__container container">
+        <h1>Contact</h1>
+    </div>
+</section>
+
+<section class="main">
+    <div class="main__container container">
+        <h2>Get In Touch With Us</h2>
+        <div class="contact__container container--full">
+            <div class="column-6">
+                <h3>Location</h3>
+                <p><strong>433 Sandwich Street South</strong></p>
+                <p>Amherstburg, ON, Canada</p>
+                <p>N9V 3K8</p>
+
+                <h3>Contact</h3>
+                <p><strong>P:</strong> 519.736.0972</p>
+                <p><strong>F:</strong> 519.736.7776</p>
+                <p><strong>E:</strong> <a href="mailto:info@amherstburghomehealth.ca">info@amherstburghomehealth.ca</a></p>
+
+                <h3>Hours</h3>
+                <div class="hours">
+                    <div class="day">
+                        <p>Monday</p>
+                        <p>9am - 6pm</p>
+                    </div>
+                    <div class="day">
+                        <p>Tuesday</p>
+                        <p>9am - 6pm</p>
+                    </div>
+                    <div class="day">
+                        <p>Wednesday</p>
+                        <p>9am - 6pm</p>
+                    </div>
+                    <div class="day">
+                        <p>Thursday</p>
+                        <p>9am - 6pm</p>
+                    </div>
+                    <div class="day">
+                        <p>Friday</p>
+                        <p>9am - 6pm</p>
+                    </div>
+                    <div class="day">
+                        <p>Saturday</p>
+                        <p>9am - 2pm</p>
+                    </div>
+                    <div class="day">
+                        <p>Sunday</p>
+                        <p>Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column-6">
+                <div class="form__container">
+                    <h3>Ask Us A Question</h3>
+                    <p><strong>We'll get right back to you</strong></p>
+                    <p>Please Fill in the Following Info:</p>
+
+                    <form action="{{ path_for('home') }}" method="post" class="form">
+                        <input type="text" name="name" placeholder="First & Last Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Your Message Here" required></textarea>
+                        <button class="button submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

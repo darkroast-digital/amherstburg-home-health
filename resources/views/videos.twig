@@ -1,0 +1,25 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}videos{% endblock %}
+{% block title %}Videos{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <img src="/assets/img/videos-hero.jpg" draggable="false">
+    <div class="page-hero__container container">
+        <h1>Videos</h1>
+    </div>
+</section>
+
+<section class="main">
+    <div class="main__container container">
+        <h2>Videos</h2>
+        <div class="videos__container container--full">
+            <div class="column-6 video">
+                <iframe src="https://player.vimeo.com/video/240213213" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Viewport Meta -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Styles -->
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+
+    <!-- Mobile Theme Colour -->
+
+    <meta name="theme-color" content="#4a7eb8">
+
+    <!-- Title and Description -->
+
+    <title>Amherstburg Home Health Care | {% block title %}{% endblock %}</title>
+    <meta name="description" content="We pride ourselves on being more than just a store. Our philosophy is customer-centred care where you, our customer, are the heart of our business.">
+    <meta name="keywords" content="amherstburg, health care, healthcare, home health, amherstburg healthcare, amherstburg health care, seating, positioning, compression, bracing, supports, walking aids, walking supports, power mobility, power scooters, power wheelchairs, cpap, bedroom safety, bathroom safety, physiotherapy aids, incontinence, ostomy, woundcare, lift chairs, assistive daily living, orthotics, breast pumps">
+
+    <!-- Favicons -->
+
+    <link rel="icon" href="/assets/img/fav.png">
+    
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Amherstburg Home Health Care">
+    <meta property="og:description" content="We pride ourselves on being more than just a store. Our philosophy is customer-centred care where you, our customer, are the heart of our business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="amherstburghomehealth.ca">
+    <meta property="og:site_name" content="Amherstburg Home Health Care">
+    <meta property="og:image" content="/assets/img/og.jpg">
+    
+
+    <!--[if lt IE 9]>
+     <script src="js/polyfill/html5-shiv.js"></script>
+  <![endif]-->
+
+
+</head>
+<body>
+    {% include 'partials/off-canvas.twig' %}
+    <header class="header">
+        <div class="header-bar">
+            <div class="header-bar__container container">
+                <a href="{{ path_for('home') }}"><img src="/assets/img/logo.png" class="logo" alt="Amherstburg Home Health Care" draggable="false"></a>
+                <img src="/assets/img/adp-header-banner.jpg" class="banner" alt="Ontario Assistive Devices Program (ADP) Approved Vendor in Power & Manual Wheelchairs, Seating, and Mobility" draggable="false">
+                <div class="contact-info">
+                    <div class="location">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <p>433 Sandwich Street South <br/>
+                            Amherstburg ON, N9V 3K8</p>
+                    </div>
+                    <div class="phone">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <p>(519) 736-0972</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include 'partials/nav.twig' %}
+    </header>
+
+    <div class="{% block pageclass %}{% endblock %}" id="app">
+        <div class="content">
+            {% include 'partials/overlay.twig' %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-socials">
+            <div class="footer-socials__container container">
+                <div class="socials">
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-content__container container">
+                <a href="{{ path_for('contact') }}">Contact Us</a>
+                <p>&copy; Amherstburg Home Health Care | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/app.js"></script>
+
+    {# Mister Sandman...sand me a man... #}
+</body>
+</html>
