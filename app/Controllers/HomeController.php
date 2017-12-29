@@ -17,19 +17,18 @@ class HomeController extends Controller
     public function post($request, $response, $args)
     {
         $mail = new PHPMailer;
-        $params = $request->getParams();
 
-        $name = $params['name'];
-        $email = $params['email'];
-        $about = $params['subject'];
-        $message = $params['message'];
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $about = $_POST['subject'];
+        $message = $_POST['message'];
         
         $subject = "New query from Amherstburg Home Health Care";
 
         $mail->setFrom($email, $name);
         $mail->addAddress('info@amherstburghomehealth.ca', 'Amherstburg Home Health Care');
         $mail->addReplyTo('info@amherstburghomehealth.ca', 'Amherstburg Home Health Care');
-        $mail->ReutrnPath='info@amherstburghomehealth.ca';
+        $mail->ReturnPath='info@amherstburghomehealth.ca';
 
         $mail->isHTML(true);
 
